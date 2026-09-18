@@ -37,7 +37,7 @@ fi
 # Release zips downloaded through a browser carry the quarantine xattr, and neither the
 # daemon nor the app is Developer-ID signed. Clearing it here is what the user asked for
 # by running the installer.
-xattr -dr com.apple.quarantine ./bowheel ./Bowheel.app 2>/dev/null || true
+xattr -dr com.apple.quarantine ./bowheel ./Bowheel.app ./org.bowheel.daemon.plist 2>/dev/null || true
 
 # Only replace the daemon when it actually changed: TCC pins an ad-hoc binary by code
 # hash, so a needless copy of a rebuilt-but-identical file is harmless, but a changed one
